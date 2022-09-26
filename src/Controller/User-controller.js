@@ -142,7 +142,7 @@ const logout = async (req, res, nex) => {
     return res, json({ message: err, isError: true });
   }
 
-  User.updateOne(
+  await User.updateOne(
     { email: userEmail },
     {
       $set: {
